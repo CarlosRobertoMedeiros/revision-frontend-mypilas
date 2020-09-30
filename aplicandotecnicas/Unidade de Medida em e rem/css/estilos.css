@@ -1,0 +1,38 @@
+html{
+	font-size: 16px;
+}
+
+/***************************************************************\
+				texto
+\***************************************************************/
+.texto{
+	font-size: 2em; /*32px pensando no padrão medium de fonte*/
+}
+
+.texto h1{
+	font-size: 3em;
+}
+
+.texto p{
+	padding: 0.5em;
+	margin-right: 3em;
+	border: 0.5em solid black; /*Referente ao font-size do próprio elemento*/
+
+	font-size: 2em; /* 96px */
+}
+
+.texto h1  span{
+	font-size: 0.5em;/* 48px */
+}
+
+/***************************************************************\
+				comentarios
+\***************************************************************/
+.comentarios{
+	font-size: 2rem; /*32px*/
+}
+
+.comentarios p{
+	font-size: 2rem; /*64px*/
+}
+
