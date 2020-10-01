@@ -2,6 +2,7 @@
   PLANO
 \**************************************/
 .plano {
+	position: relative; /*Usei para mostrar a referência do filho plano--mais-popular*/
 	padding: 10px;
 	border: 1px solid #95a4a5;
 
@@ -15,6 +16,24 @@
 		margin-right: 5%;
 	}
 }*/
+
+.plano--mais-popular::after{
+	position: absolute;
+	top:-10px;
+	left: -10px;
+
+	padding: 0 10px;
+
+	background-color: #c20303;
+	color: #fff;
+
+	font-size: 0.7142em; /* 10px / 14px(fonte do elemento pai (plano)) */
+	line-height: 2.5;
+
+	content: "MAIS POPULAR";
+
+
+}
 
 .plano__cabecalho {
 	margin: -10px;
@@ -62,6 +81,7 @@
 	background-color: #bbb;
 	color: #fff;
 	
+	line-height: normal;
 	font-size: 1em;
 	text-decoration: none; 
 }
@@ -73,11 +93,13 @@
 	text-decoration: none;
 }
 
-.botao--assinar{
+.botao--assinar, .botao--login{
 	background-color: #127d00;
 }
 
-.botao--assinar :hover, .botao--assinar :focus{
+.botao--assinar :hover, .botao--assinar :focus,
+.botao--login :hover, .botao--login :focus
+{
 	background-color: #0e6400;	
 }
 
@@ -153,6 +175,7 @@
 }
 
 .depoimento > blockquote{
+	position: relative;
 	margin: 0;
 	padding:0 60px;
 
@@ -160,6 +183,20 @@
 
 	font-size: 1em;
 }
+
+.depoimento > blockquote::before{
+	position: absolute;
+	left: 0;
+	top: -0.35em; /*  62 / 176 =  0.35em */
+
+	color: #ccc;
+
+	font-size: 8em; /* 22*8 = 176px */
+
+	content: "\201C" /* https://en.wikipedia.org/wiki/List_of_Unicode_characters#Unicode_symbols */
+}
+
+
 
 .depoimento__autor{
 	margin-top: 40px;
@@ -175,4 +212,109 @@
 .depoimento__autor > p{
 	margin-top: 10px;
 }
+
+
+
+/**************************************\
+  NAVEGAÇÃO
+\**************************************/
+.navegacao{
+
+}
+
+.navegacao > img{
+	margin-top:10px;
+
+}
+
+.navegacao__menu{
+	float: right;
+
+}
+
+
+/**************************************\
+  BOTÃO-CHAVEADOR
+\**************************************/
+.botao-chaveador{
+	width: 24px;
+	height: 24px;
+	border: 0;
+
+	
+	background: none;
+	background-image: url("../imagens/bars.png");
+
+	outline: none;/* Arranca a borda que foi colocada pelo navegador*/
+
+}
+
+@media(min-width: 992px){
+	.botao-chaveador{
+		display: none;
+	}
+}
+
+/**************************************\
+  MENU
+\**************************************/
+
+.menu{
+	margin:0;
+
+	font-size: 1.4rem;
+
+	list-style: none;
+}
+
+.menu__item >a{
+	text-decoration: none;
+}
+
+@media(max-width: 991px){
+
+	.menu{
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+
+		display: none;
+		width: 200px;
+		padding: 20px;
+		border-right: 1px solid #eee;
+
+		background-color: #fbfbfb;
+
+	}
+
+	.menu--exibindo{ /* Classe de estado*/
+		display: block;
+	}
+
+	.menu__item{
+		display: block;
+
+		line-height: 3; /*3x o tamanho da fonte */
+	}
+
+	.menu__item--botao{
+		margin-top:20px;
+	}
+}
+
+@media(min-width: 992px){
+
+	.menu__item{
+		display: inline-block;
+		padding-right: 20px;
+	}
+
+	.menu__item:last-of-type{
+		padding-right: 0px;
+	}
+
+}
+
+
 
